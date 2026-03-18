@@ -1,4 +1,3 @@
- 
 from flask import Flask, request, jsonify
 from PIL import Image, ImageChops
 import os
@@ -13,9 +12,11 @@ os.makedirs(BASELINE_DIR, exist_ok=True)
 os.makedirs(NEW_DIR, exist_ok=True)
 os.makedirs(DIFF_DIR, exist_ok=True)
 
+
 @app.route("/")
 def home():
     return "Visual Test Baseline Manager Running!"
+
 
 @app.route("/compare", methods=["POST"])
 def compare_images():
@@ -40,8 +41,6 @@ def compare_images():
     else:
         return jsonify({"result": "Same"})
 
-if __name__ == "__main__":
-    app.run(debug=True)
 
 @app.route("/update-baseline", methods=["POST"])
 def update_baseline():
@@ -51,3 +50,7 @@ def update_baseline():
     new.save(baseline_path)
 
     return jsonify({"message": "Baseline updated successfully"})
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
