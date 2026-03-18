@@ -1,210 +1,135 @@
 Visual Test Baseline Manager
 
+--------------------------------------------------
 
+Visual Test Baseline Manager is a system designed to detect visual changes in UI by comparing screenshots. It helps identify visual regressions in automated testing workflows.
 
-\----------------------------------
-
-
-
-Student Name: Manalee Tamrakar  
-
-Course: CSE3253 DevOps \[PE6]  
-
-Semester: VI (2025–2026)  
-
-Project Type: Testing  
-
-Difficulty: Intermediate  
-
-
-
-\----------------------------------
-
-
+--------------------------------------------------
 
 Project Overview
 
+The system compares baseline images with new test images using image processing techniques. It detects differences and highlights them, enabling efficient UI testing.
 
+--------------------------------------------------
 
-Problem Statement  
+Technologies Used
 
-Modern UI testing lacks efficient visual regression tracking. This project provides a system to manage baseline images and detect UI changes using automated comparison.
+• Python  
+• Flask  
+• Pillow (PIL)  
+• Docker  
+• Git  
 
+--------------------------------------------------
 
+Objectives
 
-Objectives  
+• Manage baseline screenshots  
+• Detect UI changes automatically  
+• Enable baseline updates  
+• Support DevOps-based workflows  
 
-\- Manage baseline screenshots  
+--------------------------------------------------
 
-\- Detect UI changes automatically  
+Key Features
 
-\- Enable baseline updates  
+• Image comparison using pixel difference  
+• Automatic detection of visual changes  
+• Baseline update functionality  
+• REST API-based system  
 
-\- Integrate with DevOps workflows  
-
-
-
-Key Features  
-
-\- Image comparison using Python  
-
-\- Difference detection  
-
-\- Baseline update API  
-
-\- REST API-based testing system  
-
-
-
-\----------------------------------
-
-
-
-Technology Stack
-
-
-
-Core Technologies  
-
-\- Programming Language: Python  
-
-\- Framework: Flask  
-
-\- Image Processing: PIL (Pillow)  
-
-
-
-DevOps Tools  
-
-\- Version Control: Git  
-
-\- CI/CD: To be added  
-
-\- Containerization: Docker (In progress)  
-
-
-
-\----------------------------------
-
-
+--------------------------------------------------
 
 Getting Started
 
+Prerequisites
 
+• Python 3.8+  
+• Git  
+• Docker (optional)  
 
-Prerequisites  
-
-\- Python 3.8+  
-
-\- Git  
-
-
-
-Installation  
-
-
+Installation
 
 git clone https://github.com/YOUR-USERNAME/devopsprojectvisualtestbaselinemanager.git  
-
 cd devopsprojectvisualtestbaselinemanager  
-
 pip install flask pillow  
-
 python src/main/app.py  
 
+--------------------------------------------------
 
+Docker Setup
 
-\----------------------------------
+Run using Docker:
 
+docker compose up --build  
 
+Access application at:  
+http://localhost:8080  
+
+--------------------------------------------------
 
 API Endpoints
 
-
-
-Compare Images  
-
 POST /compare  
-
-
-
-Update Baseline  
+Compare baseline and new image  
 
 POST /update-baseline  
+Update baseline image  
 
-
-
-\----------------------------------
-
-
+--------------------------------------------------
 
 Testing
 
-
-
-Use curl command:
-
-
+Example curl command:
 
 curl -X POST http://127.0.0.1:5000/compare -F "baseline=@img1.jpg" -F "new=@img2.jpg"  
 
+--------------------------------------------------
 
+Project Structure
 
-\----------------------------------
+src/ → Application code  
+docs/ → Documentation  
+infrastructure/ → Docker setup  
+pipelines/ → CI/CD (optional)  
+tests/ → Test cases  
+monitoring/ → Monitoring configs  
 
+--------------------------------------------------
 
+Documentation
 
-Learnings
+Project Plan → docs/projectplan.md  
+Design Document → docs/designdocument.md  
+User Guide → docs/userguide.md  
+API Documentation → docs/apidocumentation.md  
 
-
-
-\- Implemented visual regression testing  
-
-\- Learned DevOps workflow basics  
-
-\- Built REST API using Flask  
-
-
-
-\----------------------------------
-
-
+--------------------------------------------------
 
 Challenges
 
+• Docker configuration issues  
+• Port mapping and container access  
+• File handling in Windows  
 
+--------------------------------------------------
 
-\- Handling image comparison accuracy  
+Learnings
 
-\- Managing file paths in Windows  
+• Implemented visual regression testing  
+• Learned containerization using Docker  
+• Understood DevOps workflow  
 
-\- Setting up Docker environment  
-
-
-
-\----------------------------------
-
-
+--------------------------------------------------
 
 Future Improvements
 
+• Add frontend UI  
+• Integrate CI/CD pipeline  
+• Improve image comparison accuracy  
 
-
-\- Add frontend interface  
-
-\- Integrate CI/CD pipeline  
-
-\- Improve comparison algorithm  
-
-
-
-\----------------------------------
-
-
+--------------------------------------------------
 
 Contact
 
-
-
 GitHub: https://github.com/manaleetamrakar
-
