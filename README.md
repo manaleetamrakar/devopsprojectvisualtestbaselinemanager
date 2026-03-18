@@ -1,112 +1,210 @@
-# \# Visual Test Baseline Manager
+Visual Test Baseline Manager
 
-# 
 
-# Student Name: Manalee Tamrakar  
 
-# Course: CSE3253 DevOps \[PE6]  
+\----------------------------------
 
-# Semester: VI (2025–2026)  
 
-# Project Type: Testing  
 
-# Difficulty: Intermediate  
+Student Name: Manalee Tamrakar  
 
-# 
+Course: CSE3253 DevOps \[PE6]  
 
-# \---
+Semester: VI (2025–2026)  
 
-# 
+Project Type: Testing  
 
-# \## 📌 Project Overview
+Difficulty: Intermediate  
 
-# 
 
-# \### Problem Statement
 
-# Modern UI testing lacks efficient visual regression tracking. This project provides a system to manage baseline images and detect UI changes using automated comparison.
+\----------------------------------
 
-# 
 
-# \### Objectives
 
-# \- Manage baseline screenshots  
+Project Overview
 
-# \- Detect UI changes automatically  
 
-# \- Enable baseline updates  
 
-# \- Integrate with DevOps workflows  
+Problem Statement  
 
-# 
+Modern UI testing lacks efficient visual regression tracking. This project provides a system to manage baseline images and detect UI changes using automated comparison.
 
-# \### Key Features
 
-# \- Image comparison using Python  
 
-# \- Difference detection  
+Objectives  
 
-# \- Baseline update API  
+\- Manage baseline screenshots  
 
-# \- REST API-based testing system  
+\- Detect UI changes automatically  
 
-# 
+\- Enable baseline updates  
 
-# \---
+\- Integrate with DevOps workflows  
 
-# 
 
-# \## ⚙️ Technology Stack
 
-# 
+Key Features  
 
-# \### Core Technologies
+\- Image comparison using Python  
 
-# \- Programming Language: Python  
+\- Difference detection  
 
-# \- Framework: Flask  
+\- Baseline update API  
 
-# \- Image Processing: PIL (Pillow)  
+\- REST API-based testing system  
 
-# 
 
-# \### DevOps Tools
 
-# \- Version Control: Git  
+\----------------------------------
 
-# \- CI/CD: (To be added)  
 
-# \- Containerization: Docker (In progress)  
 
-# 
+Technology Stack
 
-# \---
 
-# 
 
-# \## 🚀 Getting Started
+Core Technologies  
 
-# 
+\- Programming Language: Python  
 
-# \### Prerequisites
+\- Framework: Flask  
 
-# \- Python 3.8+  
+\- Image Processing: PIL (Pillow)  
 
-# \- Git  
 
-# 
 
-# \### Installation
+DevOps Tools  
 
-# 
+\- Version Control: Git  
 
-# ```bash
+\- CI/CD: To be added  
 
-# git clone https://github.com/YOUR-USERNAME/devopsprojectvisualtestbaselinemanager.git
+\- Containerization: Docker (In progress)  
 
-# cd devopsprojectvisualtestbaselinemanager
 
-# pip install flask pillow
 
-# python src/main/app.py
+\----------------------------------
+
+
+
+Getting Started
+
+
+
+Prerequisites  
+
+\- Python 3.8+  
+
+\- Git  
+
+
+
+Installation  
+
+
+
+git clone https://github.com/YOUR-USERNAME/devopsprojectvisualtestbaselinemanager.git  
+
+cd devopsprojectvisualtestbaselinemanager  
+
+pip install flask pillow  
+
+python src/main/app.py  
+
+
+
+\----------------------------------
+
+
+
+API Endpoints
+
+
+
+Compare Images  
+
+POST /compare  
+
+
+
+Update Baseline  
+
+POST /update-baseline  
+
+
+
+\----------------------------------
+
+
+
+Testing
+
+
+
+Use curl command:
+
+
+
+curl -X POST http://127.0.0.1:5000/compare -F "baseline=@img1.jpg" -F "new=@img2.jpg"  
+
+
+
+\----------------------------------
+
+
+
+Learnings
+
+
+
+\- Implemented visual regression testing  
+
+\- Learned DevOps workflow basics  
+
+\- Built REST API using Flask  
+
+
+
+\----------------------------------
+
+
+
+Challenges
+
+
+
+\- Handling image comparison accuracy  
+
+\- Managing file paths in Windows  
+
+\- Setting up Docker environment  
+
+
+
+\----------------------------------
+
+
+
+Future Improvements
+
+
+
+\- Add frontend interface  
+
+\- Integrate CI/CD pipeline  
+
+\- Improve comparison algorithm  
+
+
+
+\----------------------------------
+
+
+
+Contact
+
+
+
+GitHub: https://github.com/manaleetamrakar
 
