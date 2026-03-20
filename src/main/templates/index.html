@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visual Test Baseline Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            margin: 10px 0;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .same {
+            color: green;
+        }
+
+        .different {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Visual Test Baseline Manager</h2>
+
+    <form id="uploadForm">
+        <label>Baseline Image</label><br>
+        <input type="file" id="baseline" required><br>
+
+        <label>New Image</label><br>
+        <input type="file" id="new" required><br>
+
+        <button type="submit">Compare</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    const form = document.getElementById("uploadForm");
+
+    form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        const baseline = document.getElementById("baseline").files[0];
+        const newImg = document.getElementById("new").files[0];
+
+        let formData = new FormData();
+        formData.append("baseline", baseline);
+        formData.append("new", newImg);
+
+        const response = await fetch("/compare", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+        const resultDiv = document.getElementById("result");
+
+        resultDiv.innerText = data.result;
+
+        if (data.result === "Same") {
+            resultDiv.className = "same";
+        } else {
+            resultDiv.className = "different";
+        }
+    });
+</script>
+
+</body>
+</html>

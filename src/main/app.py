@@ -1,3 +1,5 @@
+from flask import Flask, request, jsonify, render_template
+
 from flask import Flask, request, jsonify
 from PIL import Image, ImageChops
 import os
@@ -12,10 +14,9 @@ os.makedirs(BASELINE_DIR, exist_ok=True)
 os.makedirs(NEW_DIR, exist_ok=True)
 os.makedirs(DIFF_DIR, exist_ok=True)
 
-
 @app.route("/")
 def home():
-    return "Visual Test Baseline Manager Running!"
+    return render_template("index.html")
 
 
 @app.route("/compare", methods=["POST"])
